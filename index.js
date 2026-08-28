@@ -72,7 +72,7 @@ const totalContributions = GAMES_JSON.reduce( (acc, game) => {
 }, 0);
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.innerHTML = `$${totalContributions.toLocaleString()}`;
+contributionsCard.innerHTML = `${totalContributions.toLocaleString()}`;
 
 
 // grab the amount raised card, then use reduce() to find the total amount raised
@@ -164,7 +164,7 @@ let displayStr = `A total of $100,000 has been raised for 11 games. Currently, $
 
 // create a new DOM element containing the template string and append it to the description container
 const description = document.getElementById("description-container");
-description.innerHTML = displayStr;
+description.innerHTML += `<p>${displayStr}</p>`;
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -179,7 +179,21 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
-
+const [firstGame, secondGame, ...restOfGames] = sortedGames;
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+firstGameContainer.innerHTML += `<p>${firstGame.name}</p>`
 
 // do the same for the runner up item
+secondGameContainer.innerHTML += `<p>${secondGame.name}</p>`;
+
+// search box
+const searchBox = document.getElementById("search-box")
+searchBox.addEventListener('input', (event) => {
+    const searchText = event.target.value.toLowerCase();
+    const filteredGames = GAMES_JSON.filter( (game) => {
+        return game.name.toLowerCase().includes(searchText);
+    });
+
+    deleteChildElements(gamesContainer);
+    addGamesToPage(filteredGames);
+});

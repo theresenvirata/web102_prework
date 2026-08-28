@@ -23,10 +23,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./web102_prework_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with Kap
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -34,7 +34,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Throughout the making of this app. I struggled a lot with recalling how JavaScript events connected to HTML elements. I also struggled with understanding the concepts that were introducted during the prework such as .filter(), .reduce(), and destructuring. But by doing the exercises and looking through the recommended resources, I was able to understand the theory.
 
 ## License
 
